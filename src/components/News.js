@@ -34,6 +34,7 @@ const News=(props)=> {
           // eslint-disable-next-line
         }, [])
 
+        
     const fetchMoreData = async () => {
         const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
         setpage(page+1)
@@ -53,6 +54,7 @@ const News=(props)=> {
                 next={fetchMoreData}
                 hasMore={articles.length!==totalResults}
                 loader={<Spinner/>}>
+
            <div className="container">
              <div className="row"> 
                 {articles.map((element)=>{
